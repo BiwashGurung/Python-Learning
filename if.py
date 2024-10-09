@@ -47,3 +47,34 @@ for fruit in fruits:
 fruits = ['banana','apple','mango']
 for index in range(len(fruits)):
     print('Current fruit:',fruits[index])
+
+#Break Statement
+count = 0
+while count < 10:
+    count += 1
+    if count == 5:  
+        break
+    print("inside loop", count)
+print("out of while loop")     
+
+
+#Coninue Statement
+ctr = 0
+for ctr in range(10):
+    ctr = ctr + 1
+    if  ctr == 5:
+        print("5 is skipped")
+        continue
+        print("This won't be printed too.")
+    print('Number is' + str(ctr))
+print('Out of loop') 
+
+
+#pass Statement
+for letter in 'Python':
+    if letter == 'h':
+        pass
+    else:
+        print ('Current Letter:', letter)
+print ("Good BYE" )       
+
