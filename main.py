@@ -74,25 +74,55 @@ for i in range(1, 31):
         print(i)
 
 
-hexStr = bytes.fromhex('A2f7 4509')
-print(hexStr)
-byteString = b'\xa2\xf7E\t'
-print(byteString.hex())
+# hexStr = bytes.fromhex('A2f7 4509')
+# print(hexStr)
+# byteString = b'\xa2\xf7E\t'
+# print(byteString.hex())
 
-bArray1 = b"XYZ"
-bArray2 = bArray1.replace(b"X", b"P")
-print(bArray2)
+# bArray1 = b"XYZ"
+# bArray2 = bArray1.replace(b"X", b"P")
+# print(bArray2)
 
-byteArray1 = b'ABBACACBBACA'
-print(byteArray1.count(b'AC'))
+# byteArray1 = b'ABBACACBBACA'
+# print(byteArray1.count(b'AC'))
 
-print(byteArray1.find(b'CA'))
-bArr = b'Pokhara,Kathmandu,Lekhnath,Palpa'
-partList = bArr.partition(b',')
-print(partList)
+# print(byteArray1.find(b'CA'))
+# bArr = b'Pokhara,Kathmandu,Lekhnath,Palpa'
+# partList = bArr.partition(b',')
+# print(partList)
 
-myByteArray = bytearray('String', 'UTF-8')
-memView = memoryview(myByteArray)
+# myByteArray = bytearray('String', 'UTF-8')
+# memView = memoryview(myByteArray)
 
-print(memView[2]) #ASCII of 'r'
-print(bytes(memView[1:5]))       
+# print(memView[2]) #ASCII of 'r'
+# print(bytes(memView[1:5]))       
+
+
+
+
+def is_leap_year(year):
+    # Check the leap year conditions
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    return False
+
+# Option to either input a year or check a range
+option = input("Do you want to input a year or check a range? (input/range): ").strip().lower()
+
+if option == 'input':
+    # Take user input
+    year = int(input("Enter a year: "))
+    if is_leap_year(year):
+        print(f"{year} is a leap year.")
+    else:
+        print(f"{year} is not a leap year.")
+        
+elif option == 'range':
+    # Check leap years in the range from 2012 to 3040
+    print("Leap years from 2012 to 3040 are:")
+    for year in range(2012, 3041):
+        if is_leap_year(year):
+            print(year)
+else:
+    print("Invalid option. Please select either 'input' or 'range'.")
+
